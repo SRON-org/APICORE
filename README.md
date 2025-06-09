@@ -16,162 +16,66 @@ API Configuration & Orchestration Runtime Engine​
 
 ## 简介
 
-APICORE 是一款智能API配置引擎，可将任意图像生成API转化为可视化交互系统。通过JSON配置文件实现：
+APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​​，通过声明式配置文件实现：
 
-• 🎚 动态生成参数控制面板（滑块/下拉框/文本框）
+- **🔄 ​广泛兼容性**: APICORE 规范自身具有强大的可扩展性，无论是各种参数或响应格式都可以轻松兼容。
+- **⚡ 简明易读性**: APICORE 的标准参数关键词均为日常生活中的通俗用语，简单易懂。
+- **📦 ​​描述标准化​**: APICORE 专注于解决多个应用程序之间API配置管理中的碎片化问题，让开发者告别重复对接工作，专注于核心业务逻辑。。
 
-• 🔍 智能解析API响应数据结构
+## 为什么选择我们的 APICORE
 
-• ⚡ 一键式API请求构建系统
+**更灵活、更强大的可扩展性，和标准规范性**
 
-• 🎨 多类型图片输出支持（URL/二进制流）
+| 特性           | 	APICORE 标准规范                                    | 传统对接方式        | 
+| -------------- | --------------------------------------- | ----------------------------------------- |
+| **​​开发效率​​**       | **配置文件驱动**          | 手工编写调用代码                  |
+| **维护成本​**       | **单点配置全局生效**           | 多处修改难以同步                    |
+| **​​错误处理​**       | **统一异常规范**                | 接口差异处理                      |
+| **强大生态**       | **基于 JSON ：更方便地拓展生态**                | 需要单独适配每个API的请求    |
 
+## 生态
 
-核心功能
+[**APICORE_Python**](https://github.com/SRON-org/APICORE_Python)：在 Python 上提供对使用 APICORE 规范 格式的文件的进行解析。
 
-🌟 动态UI生成器
-| 参数类型 | 控件示例                     | 支持配置               |
-|----------|------------------------------|------------------------|
-| `slider` | ![滑块控件]                    | 范围/步长/默认值       |
-| `combo`  | ![下拉框控件]                  | 可选项列表/默认选择    |
-| `text`   | ![文本框控件]                  | 输入校验/最大长度限制  |
+## 代码补全
 
-🚀 智能API适配器
-```python
-# 典型使用场景
-config = APICore.load_config("stable_diffusion.json")
-user_params = {
-    "prompt": "Cyborg cat in cyberpunk city", 
-    "quality": 95,  # 自动映射到滑动条比例
-    "style": "cyberpunk"  # 来自预定义选项
-}
-response = APICore.execute_request(config, user_params)
-APICore.save_images(response)  # 自动处理URL和二进制数据
-```
+你可以通过引入 [Schema 文件](https://raw.githubusercontent.com/SRON-org/APICORE/refs/heads/main/APICORE.Schema.json)，
+并进行以下配置来启用 JSON 代码的自动补全。
 
-快速开始
-
-安装
-```bash
-git clone https://github.com/yourusername/apicore.git
-cd apicore
-pip install -r requirements.txt
-```
-
-基本使用
-```python
-from apicore import APIConfigManager
-
-# 加载配置
-config = APIConfigManager.load_config('configs/art_generator.json')
-
-# 构建动态界面
-ui_builder = UIBuilder(config)
-ui_builder.render_controls()  # 自动生成参数控制面板
-
-# 执行API请求
-params = ui_builder.get_user_inputs()
-response_handler = APIExecutor(config).execute(params)
-
-# 处理结果
-if response_handler.success:
-    print(f"生成成功！作品ID: {response_handler.get_metadata('id')}")
-    response_handler.save_images("output/") 
-else:
-    print(f"错误代码 {response_handler.error_code}: {response_handler.error_message}")
-```
-
-配置规范
-
-标准结构模板
+### VS Code 配置方法
+1. 在或创建 .vscode/settings.json 文件
+2. 添加以下配置：
 ```json
 {
-  "api_config": {
-    "name": "CyberArt Generator Pro",
-    "version": "2.3",
-    "api_url": "https://api.cyberart.io/v2/generate",
-    "method": "POST",
-    "headers": {
-      "Authorization": "Bearer ${API_KEY}"
-    },
-    "parameters": [
-      {
-        "param_name": "resolution",
-        "display_name": "作品分辨率",
-        "param_type": "combo",
-        "options": ["1024x768", "1920x1080", "3840x2160"],
-        "default": "1920x1080",
-        "advanced": true
-      },
-      {
-        "param_name": "artistic_level",
-        "display_name": "艺术化强度",
-        "param_type": "slider",
-        "min_value": 1,
-        "max_value": 10,
-        "step": 0.5,
-        "default": 7.5
-      }
-    ],
-    "response": {
-      "image_type": "url",
-      "data_path": "output.result_images[0].hd_url",
-      "metadata_mapping": {
-        "request_id": "transaction.id",
-        "generation_time": "metrics.duration"
-      }
+  "json.schemas": [
+    {
+      "fileMatch": ["*.api.json"],
+      "url": "https://raw.githubusercontent.com/SRON-org/APICORE/refs/heads/main/APICORE.Schema.json"
     }
+  ],
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/SRON-org/APICORE/refs/heads/main/APICORE.Schema.json": "*.api.yaml"
   }
 }
 ```
 
-响应处理机制
-```python
-# 智能元数据提取
-response_handler.get_metadata('request_id')  # 返回交易ID
+### JetBrains IDE 配置方法
+1. 打开 Preferences > Languages & Frameworks > Schemas and DTDs > JSON Schema Mappings
+2. 添加新映射：
+- Schema file or URL: https://raw.githubusercontent.com/SRON-org/APICORE/refs/heads/main/APICORE.Schema.json
+- File path pattern: *.api.json
+- Schema version: Draft 7
 
-# 多格式图片保存
-response_handler.save_images(
-    output_dir="gallery",
-    naming_strategy="{timestamp}_{param[style]}",  # 自定义文件名模板
-    format="webp"  # 自动格式转换
-)
-```
+## 标准和示例
 
-进阶功能
+编码: UTF-8
 
-🔒 安全配置
-```json
-{
-  "security": {
-    "auth_type": "oauth2",
-    "credential_path": "~/.config/apicore/credentials.json",
-    "token_refresh": {
-      "endpoint": "https://api.example.com/auth/token",
-      "expires_in": 3600
-    }
-  }
-}
-```
+参考：[config_file.json](https://github.com/SRON-org/APICORE_Python/blob/main/config_file.json)
 
-⏱ 性能监控
-```python
-APICore.enable_telemetry()  # 启用性能监控
-APICore.monitor.dashboard()  # 实时查看API调用指标
-```
+## 开放
 
-贡献指南
+我们时刻欢迎各位开发者完善和更新协议，欢迎提交 Pull Request 来改进 APICORE ！
 
-我们欢迎各种形式的贡献！请通过以下方式参与：
+## 协议
 
-1. 提交issue报告问题
-2. 创建pull request改进代码
-3. 在discussion区分享配置模板
-
-许可证
-
-本项目采用 [MIT License](LICENSE)
-
----
-
-特别推荐：查看[示例配置库](examples/)获取Stable Diffusion、Midjourney等流行服务的现成配置模板！
+[MIT](./LICENSE)
