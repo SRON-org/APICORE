@@ -33,6 +33,12 @@ APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​�
 | **​​错误处理​**       | **统一异常规范**                | 接口差异处理                      |
 | **强大生态**       | **基于 JSON ：更方便地拓展生态**                | 需要单独适配每个API的请求    |
 
+## 编写
+
+欢迎访问本仓库 [Wiki](https://github.com/SRON-org/APICORE/wiki) 
+
+这里有详细的[编写指南](https://github.com/SRON-org/APICORE/wiki/Create-a-New-APICORE-Configuration-File)。通过指南，你可以详细和准确地编写符合 APICORE 规范的API配置
+
 ## 生态
 
 [**APICORE_Python**](https://github.com/SRON-org/APICORE_Python)：在 Python 上提供对使用 APICORE 规范 格式的文件的进行解析。
