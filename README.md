@@ -42,6 +42,7 @@ APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​�
 ## 生态
 
 [**APICORE_Python**](https://github.com/SRON-org/APICORE_Python)：在 Python 上提供对使用 APICORE 规范 格式的文件的进行解析。
+
 [**API 市场**](https://github.com/IntelliMarkets/Wallpaper_API_Index/)：壁纸生成器 NEXT 的 API 图片源市场
 
 ## 代码补全
