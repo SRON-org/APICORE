@@ -20,7 +20,7 @@ APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​�
 
 - **🔄 ​广泛兼容性**: APICORE 规范自身具有强大的可扩展性，无论是各种参数或响应格式都可以轻松兼容。
 - **⚡ 简明易读性**: APICORE 的标准参数关键词均为日常生活中的通俗用语，简单易懂。
-- **📦 ​​描述标准化​**: APICORE 专注于解决多个应用程序之间API配置管理中的碎片化问题，让开发者告别重复对接工作，专注于核心业务逻辑。。
+- **📦 ​​描述标准化​**: APICORE 专注于解决多个应用程序之间API配置管理中的碎片化问题，让开发者告别重复对接工作，专注于核心业务逻辑。
 
 ## 为什么选择我们的 APICORE
 
@@ -47,8 +47,7 @@ APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​�
 
 ## 代码补全
 
-你可以通过引入 [Schema 文件](https://raw.githubusercontent.com/SRON-org/APICORE/refs/heads/main/APICORE.Schema.json)，
-并进行以下配置来启用 JSON 代码的自动补全。
+你可以通过引入 [Schema 文件](https://raw.githubusercontent.com/SRON-org/APICORE/refs/heads/main/APICORE.Schema.json)，并进行以下配置来启用 JSON 代码的自动补全。
 
 ### VS Code 配置方法
 1. 在或创建 .vscode/settings.json 文件
