@@ -33,6 +33,9 @@ APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​�
 | **​​错误处理​**       | **统一异常规范**                | 接口差异处理                      |
 | **强大生态**       | **基于 JSON ：更方便地拓展生态**                | 需要单独适配每个API的请求    |
 
+### 与 OpenAPI 规范的区别
+OpenAPI 的配置文件主要用途是存储API的所有信息，包括参数值等信息。而 APICORE 虽然也可以存储API的完整信息，但其主要用途是使程序通过读取配置文件，将API的参数以用户可读的方式展现在UI上，使用户可以动态编辑API的每个参数值，最后再进行请求。同时，借助强大的 [**APIKernal**](https://github.com/SRInternet/APIKernal) 项目，仅需几行代码即可实现API从请求到解析值的一步到位
+
 ## 编写
 
 欢迎访问本仓库 [Wiki](https://github.com/SRON-org/APICORE/wiki) 
@@ -41,7 +44,9 @@ APICORE 是一个由 SRON 团队 研发的​​统一API配置解决方案​�
 
 ## 生态
 
-[**APICORE_Python**](https://github.com/SRON-org/APICORE_Python)：在 Python 上提供对使用 APICORE 规范 格式的文件的进行解析。
+[**APICORE_Python**](https://github.com/SRON-org/APICORE_Python)：在 Python 上提供对使用 APICORE 规范 格式的文件的进行解析
+
+[**APIKernal**](https://github.com/SRInternet/APIKernal)：只需传入接口、参数和响应路径，实现API从请求到解析值的一步到位
 
 [**API 市场**](https://github.com/IntelliMarkets/Wallpaper_API_Index/)：壁纸生成器 NEXT 的 API 图片源市场
 
