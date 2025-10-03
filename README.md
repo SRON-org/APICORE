@@ -50,6 +50,10 @@ OpenAPI 侧重于定义不同 HTTP 状态码下完整的响应数据结构 (即 
 
 ## 编写
 
+### 下载编辑器 (Windows)
+访问我们的[ APICORE 配置文件编辑器 ](https://github.com/SRON-org/APICORE_Editor)仓库并下载最新的 [Release](https://github.com/SRON-org/APICORE_Editor/releases) 或[运行编辑器源代码](https://github.com/SRON-org/APICORE_Editor/tree/master?tab=readme-ov-file#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95)，通过直观的图形化界面编写符合 APICORE 规范的API配置
+
+### 手动编写
 欢迎访问本仓库 [Wiki](https://github.com/SRON-org/APICORE/wiki) 
 
 这里有详细的[编写指南](https://github.com/SRON-org/APICORE/wiki/Create-a-New-APICORE-Configuration-File)。通过指南，你可以详细和准确地编写符合 APICORE 规范的API配置
@@ -57,6 +61,8 @@ OpenAPI 侧重于定义不同 HTTP 状态码下完整的响应数据结构 (即 
 ## 生态
 
 [**APICORE_Python**](https://github.com/SRON-org/APICORE_Python)：在 Python 上提供对使用 APICORE 规范 格式的文件的进行解析
+
+[**APICORE_Editor**](https://github.com/SRON-org/APICORE_Editor)：图形化的 APICORE 配置文件编辑器，用于创建和编辑符合 APICORE 规范的API配置文件
 
 [**APIKernal**](https://github.com/SRInternet/APIKernal)：只需传入接口、参数和响应路径，实现API从请求到解析值的一步到位
 
