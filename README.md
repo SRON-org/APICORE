@@ -1,6 +1,6 @@
 <div align="center">
 
-<image src="https://github.com/user-attachments/assets/6726d165-92e1-4dac-9aea-226f6aad7dde" height="86"/>
+<image src="https://github.com/user-attachments/assets/3b85e1ef-35e3-4f95-bf5e-90ca7f8fae13" height="86"/>
 
 # APICORE v1
 
